@@ -1,0 +1,8 @@
+{{#link-to 'index' tagName="li"}}<a href="">Home</a>{{/link-to}}
+{{#link-to 'login' tagName="li"}}<a href="">Login</a>{{/link-to}}
+{{#link-to 'about' tagName="li"}}<a href="">About</a>{{/link-to}}
+{{#link-to 'contact' tagName="li"}}<a href="">Contact</a>{{/link-to}}
+{{#if session.isAuthenticated}}
+{{#link-to 'secret' tagName="li"}}<a href="">Secrets</a>{{/link-to}}
+{{/if}}
+
