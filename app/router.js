@@ -12,6 +12,14 @@ Router.map(function() {
   this.route('secret');
   this.route('about');
   this.route('contact');
+  this.route('users', function() {
+    this.route('show');
+    this.route('new');
+  });
+
+  this.route('admin', function() {
+    this.route('users', function() {});
+  });
 });
 
 export default Router;

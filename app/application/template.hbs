@@ -1,8 +1,2 @@
 {{partial 'navbar'}}
 {{outlet}}
-{{#if session.isAuthenticated}}
-	<span>
-		{{sessionAccount.currentUser.username}}
-		<button {{action "logout"}}>Logout</button>
-	</span>
-{{/if}}
