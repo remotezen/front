@@ -13,7 +13,7 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('users', function() {
-    this.route('show');
+    this.route('show', {path: '/:user_id/show'});
     this.route('new');
   });
 

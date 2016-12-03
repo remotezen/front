@@ -6,5 +6,9 @@ export default Ember.Route.extend(ApplicationRouteMixin, {
   sessionAccount: Ember.inject.service(),
   beforeModel() {
     this.get('sessionAccount').loadCurrentUser();
+  },
+  model() {
+    const session = this.get('sessionAccount');
+    return session;
   }
 });
