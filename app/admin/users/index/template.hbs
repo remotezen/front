@@ -1,1 +1,4 @@
-{{outlet}}
+{{#each model as |user| }}
+	{{#single-user item=user}}
+	{{/single-user}}
+{{/each}}
