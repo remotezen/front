@@ -1,17 +1,28 @@
 import DS from 'ember-data';
-import Ember from 'ember';
 
-export default DS.Model.extend({
+import {validator, buildValidations} from 'ember-cp-validations';
+
+const Validations = buildValidations({
+    username: [ 
+      validator('presence',true), 
+      validator('length', {
+        min:4,
+        max:16
+      })
+    ],
+
+  password: [
+    validator('present', true),
+    validator('length', {
+      min:4,
+      max:8
+     })
+    ]
+});
+
+export default DS.Model.extend(Validations, {
   username: DS.attr('string'),
   password: DS.attr('string'),
-  passwordConfirmation: DS.attr('string'),
-  isValidUserName: Ember.computed.notEmpty('username'),
-  isValidPassword: Ember.computed.notEmpty('password'),
-  isPasswordValid: Ember.computed('password', 
-    'passwordConfirmation', () => { 
-      return 'password' === 'passwordConfirmation';   
-    }),
-  isValidStepOne: Ember.computed.and('isValidUsername', 'isValidPassword'),
-  isValid: Ember.computed.and('isValidStepOne', 'isPasswordValid'),
-  isDisabled: Ember.computed.not('isValid')
+  passwordConfirmation: DS.attr('string')
 });
+

@@ -8,6 +8,8 @@ export default Ember.Route.extend({
     this._super(controller, model);
     controller.set('title','Enroll yourself!');
     controller.set('buttonLabel', 'Create');
+  },
+  renderTemplate() {
     this.render('users/form');
   },
   actions: {

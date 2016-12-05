@@ -18,7 +18,9 @@ Router.map(function() {
   });
 
   this.route('admin', function() {
-    this.route('users', function() {});
+    this.route('users', function() {
+      this.route('edit');
+    });
   });
 });
 
