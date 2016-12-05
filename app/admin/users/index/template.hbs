@@ -1,4 +1,15 @@
 {{#each model as |user| }}
-	{{#single-user item=user}}
-	{{/single-user}}
+	<div class="row">
+		<div class="col-md-3 col-sm-4">
+			{{#single-user item=user}}
+			{{/single-user}}
+		</div>
+		<div class="col-md-3 col-sm-4">
+			<button type="submit" class="btn btn-danger btn-xs" 
+				{{action 'deleteUser' user}}>
+				delete user
+			</button>
+			</div>
+	</div>
 {{/each}}
+

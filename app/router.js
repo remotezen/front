@@ -22,6 +22,12 @@ Router.map(function() {
     this.route('users', function() {
     });
   });
+
+  this.route('navbar', function() {
+    this.route('admin', function() {
+      this.route('links');
+    });
+  });
 });
 
 export default Router;

@@ -15,7 +15,7 @@ export default Ember.Route.extend({
   },
   actions: {
     saveUser(newUser) {
-      newUser.save().then(()=> this.transitionTo('secrets'));
+      newUser.save().then(()=> this.transitionTo('users', newUser.user_id));
     },
 
     willTansition(transition) {
