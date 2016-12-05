@@ -13,13 +13,13 @@ Router.map(function() {
   this.route('about');
   this.route('contact');
   this.route('users', function() {
-    this.route('show', {path: '/:user_id/show'});
+    this.route('show', {path: '/:user_id'});
     this.route('new');
+    this.route('edit', {path: '/:user_id/edit'});
   });
 
   this.route('admin', function() {
     this.route('users', function() {
-      this.route('edit');
     });
   });
 });

@@ -2,11 +2,11 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model(params) {
-    return this.store.findRecord('users', params.user_id);
+    return this.store.findRecord('user', params.user_id);
   },
   setupController(controller, model) {
     this._super(controller, model);
-    controller.set('title','Edit library');
+    controller.set('title','Edit User');
     controller.set('buttonLabel', 'Save changes');
   },
 
