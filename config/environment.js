@@ -1,5 +1,3 @@
-
-
 module.exports = function(environment) {
   var ENV = {
     modulePrefix: 'auth',
@@ -47,7 +45,11 @@ module.exports = function(environment) {
 
   }
   ENV['ember-simple-auth'] = {
-    routeAfterAuthentication: 'secret'
+    routeAfterAuthentication: 'secret',
+    baseURL: '',
+    store: 'simple-auth-session-store:ephemeral',
+  authenticationRoute: 'login'
+
   };
 
   return ENV;
